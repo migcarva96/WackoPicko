@@ -1,0 +1,10 @@
+language: EN
+strict: false
+output:
+  file_path: results.sarif
+  format: SARIF
+sca:
+  include:
+    - .
+  exclude: # Optional: paths to exclude from scanning
+    - vendor/

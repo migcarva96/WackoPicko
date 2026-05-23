@@ -12,10 +12,5 @@ jobs:
 
       - uses: fluidattacks/sca-action@<version>
         id: scan
-
-      # Optional: upload findings to the GitHub Security tab
-      - name: Upload SARIF
-        if: always()
-        uses: github/codeql-action/upload-sarif@v4
         with:
-          sarif_file: ${{ steps.scan.outputs.sarif_file }}
+          scan_config_path: .github/sca-config.yaml

@@ -1,0 +1,11 @@
+language: EN
+strict: false
+output:
+  file_path: results.sarif
+  format: SARIF
+sast:
+  include:
+    - .
+  exclude: # Optional: paths to exclude from scanning
+    - node_modules
+    - vendor
