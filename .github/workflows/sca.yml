@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: fluidattacks/sca-action@<version>
+      - uses: fluidattacks/sca-action@v4
         id: scan
         with:
           scan_config_path: .github/sca-config.yaml
