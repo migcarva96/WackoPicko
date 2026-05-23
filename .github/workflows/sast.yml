@@ -1,10 +1,7 @@
 name: SAST
 on:
   push:
-  pull_request:
-    types: [opened, synchronize, reopened]
-  schedule:
-    - cron: "0 8 * * 1" # optional: weekly full scan every Monday at 8am
+  workflow_dispatch:
 
 jobs:
   scan:
@@ -18,3 +15,4 @@ jobs:
         id: scan
         with:
           scan_config_path: .github/sast-config.yaml
+          scanner_mode: full
