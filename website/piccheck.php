@@ -7,7 +7,6 @@ if (!isset($_FILES['userfile']) && !isset($_POST['name']))
    http_redirect("/");
 }
 
-
 $type = $_FILES['userfile']['type'];
 $name = $_POST['name'];
 
