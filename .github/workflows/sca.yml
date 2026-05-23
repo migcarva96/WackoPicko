@@ -13,3 +13,15 @@ jobs:
         id: scan
         with:
           scan_config_path: .github/sca-config.yaml
+
+      - name: Upload CSV
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-sca
+          path: results-sca.csv
+          if-no-files-found: ignore
+
+      - name: Fail on vulnerabilities
+        if: steps.scan.outputs.vulnerabilities_found == 'true'
+        run: exit 1
