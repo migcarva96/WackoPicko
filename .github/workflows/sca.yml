@@ -22,6 +22,6 @@ jobs:
           path: results-sca.csv
           if-no-files-found: ignore
 
-      - name: Fail on vulnerabilities
+      - name: Fail if vulnerability threshold exceeded
         if: steps.scan.outputs.vulnerabilities_found == 'true'
         run: exit 1
